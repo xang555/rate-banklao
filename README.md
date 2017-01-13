@@ -4,14 +4,14 @@
 
 ### list bank that support 
 
-- BCEL
-- LDB
-- BOL
-- LVB
-- BFL
-- ACLEDA
-- PSB 
-- STB
+- **BCEL**
+- **LDB**
+- **BOL**
+- **LVB**
+- **BFL**
+- **ACLEDA**
+- **PSB**
+- **STB**
 
 # install
 
@@ -56,40 +56,25 @@ result from runing above code
   
   # Method
   
-### rate-banklao.bcel(success,error);
+### rate-banklao.bcel(success,error) -> retrieve rate money from bcel bank.
 
-retrieve rate money from bcel bank
+### rate-banklao.ldb(success,error) -> retrieve rate money from ldb bank.
 
-### rate-banklao.ldb(success,error);
+### rate-banklao.bol(success,error) -> retrieve rate money from bol bank.
 
-retrieve rate money from ldb bank
+### rate-banklao.stb(success,error) -> retrieve rate money from stb bank.
 
-### rate-banklao.bol(success,error);
+### rate-banklao.lvb(success,error) -> retrieve rate money from lvb bank.
 
-retrieve rate money from bol bank
+### rate-banklao.bfl(success,error) -> retrieve rate money from bfl bank.
 
-### rate-banklao.stb(success,error);
+### rate-banklao.psb(success,erro) -> retrieve rate money from psb bank.
 
-retrieve rate money from stb bank
-
-### rate-banklao.lvb(success,error);
-
-retrieve rate money from lvb bank
-
-### rate-banklao.bfl(success,error);
-
-retrieve rate money from bfl bank
-
-### rate-banklao.psb(success,erro);
-
-retrieve rate money from psb bank
-
-### rate-banklao.acleda(success,error);
+### rate-banklao.acleda(success,error) ->  retrieve rate money from acleda bank.
+ 
   
-  retrieve rate money from acleda bank
-  
-  - success is a function when success retrieve rate from bank and pass rate parameter instead Rate  #success(rate){}
-  - errorr is a function when error retrieve rate and return error pass to parameter err #error(err){}
+  - success is a function when success retrieve rate from bank and pass rate parameter instead Rate  **#success(rate){}**
+  - errorr is a function when error retrieve rate and return error pass to parameter err **#error(err){}**
   
   
   
