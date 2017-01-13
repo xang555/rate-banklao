@@ -1,7 +1,6 @@
 {
   "name": "rate-banklao",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "start": "node app.js"
   },
@@ -11,7 +10,7 @@
   },
   "description": "this module for retive rate money of bank in lao",
   "main": "index.js",
-  "repository": "https://github.com/xang555/Ratebot.git",
+  "repository": "https://github.com/xang555/rate-banklao",
   "author": "xang <xang.ultimate@gmail.com> (http://xangnam.com)",
   "license": "MIT"
 }
