@@ -2,7 +2,7 @@
 
 ## this project is rate bot retrieve rate money from any bank in laos
 
-### list bank that support 
+### list bank that is support 
 
 - **BCEL**
 - **LDB**
