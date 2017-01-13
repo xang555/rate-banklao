@@ -53,8 +53,7 @@ result from runing above code
   { Currency: 'VND', Buy: '-', Sale: '0.37' } ]
   
   ```
-  
-  # Method
+# Method
   
 ### rate-banklao.bcel(success,error) -> retrieve rate money from bcel bank.
 
