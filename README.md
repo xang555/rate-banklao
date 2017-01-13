@@ -4,14 +4,16 @@
 
 ### list bank that is support 
 
-- **BCEL**
-- **LDB**
-- **BOL**
-- **LVB**
-- **BFL**
-- **ACLEDA**
-- **PSB**
-- **STB**
+- **BCEL** https://www.bcel.com.la
+- **LDB** http://www.ldblao.la
+- **BOL** http://www.bol.gov.la
+- **LVB** http://laovietbank.com.la
+- **BFL** http://www.banquefrancolao.com
+- **ACLEDA** http://www.acledabank.com.la
+- **PSB** http://www.phongsavanhbank.com
+- **STB** http://stbanklaos.la
+- **JDB** http://www.jdbbank.com.la
+- **KSKB** http://www.kasikornbank.com.la
 
 # install
 
@@ -70,7 +72,10 @@ result from runing above code
 ### rate-banklao.psb(success,erro) -> retrieve rate money from psb bank.
 
 ### rate-banklao.acleda(success,error) ->  retrieve rate money from acleda bank.
- 
+
+### rate-banklao.jdb(success,error) ->  retrieve rate money from jdb bank.
+
+### rate-banklao.kskb(success,error) ->  retrieve rate money from kskb bank.
   
   - success is a function when success retrieve rate from bank and pass rate parameter instead Rate  **#success(rate){}**
   - errorr is a function when error retrieve rate and return error pass to parameter err **#error(err){}**
