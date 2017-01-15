@@ -12,7 +12,7 @@ function bcel() {
 
         var storeratearray=[];
         var lablearray=['Currency','CurrencyCode','Buy','Sale','Note','Bill','Efi'];
-        var lablerateinfo =['date','rate'];
+        var lablerateinfo =['Date','rate'];
         var rateinfo={};
 
         httpclient.call(conf.serverurl.bcel,function ok(stringhtml) {
