@@ -63,14 +63,6 @@ function bol() {
 
 }
 
-
-new bol().rateinfo(function (rate) {
-    console.log(rate);
-},function (err) {
-    console.log(err);
-});
-
-
 module.exports=function () {
     return new bol();
 };
