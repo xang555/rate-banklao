@@ -12,8 +12,13 @@ function acleda() {
 
      var storeratearray=[];
      var lablearray=['Currency','Buy','Sale'];
-
+     var labelrateinfo = ['Date','rate'];
+     var rateinfo ={};
      httpclient.call(conf.serverurl.acleda,function ok(stringhtml) {
+
+         var stardatetproint=stringhtml.indexOf('span style="font-size:85%;">')+'span style="font-size:85%;">'.length;
+         var enddateproint=stringhtml.indexOf('</span>',stardatetproint);
+         var date=stringhtml.substring(stardatetproint,enddateproint).replace('&nbsp;','').trim();
 
          var startproint=stringhtml.indexOf("<tr><td");
          var endproint=stringhtml.indexOf("</table>");
@@ -34,8 +39,9 @@ function acleda() {
              storeratearray.push(storerate);
 
          }
-
-    okcallback(storeratearray);
+         rateinfo[labelrateinfo[0]] = date;
+         rateinfo[labelrateinfo[1]] = storeratearray;
+         okcallback(rateinfo);
 
      },function error(err) {
          errorcallback(err);

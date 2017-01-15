@@ -17,7 +17,7 @@ function httpclient() {
 
         request(url,option,function (error, res, body) {
             if (error){
-                errorcallback(error);
+                return errorcallback(error);
             }
             if (res.statusCode==200){
                 okcallback(body.toString());

@@ -14,6 +14,8 @@ var psb =require('./core/psb')();
 var stb =require('./core/stb')();
 var jdb =require('./core/jdb')();
 var kskb =require('./core/kskb')();
+var anz =require('/core/anz')();
+var mhjb =require('./core/mhjb')();
 
 
 exports.bcel = function (Okcallback, ErrorCallnack) {
@@ -95,3 +97,18 @@ exports.kskb = function (Okcallback, ErrorCallnack) {
     throw "callback is not function";
 };
 
+exports.anz = function (Okcallback, ErrorCallnack) {
+
+    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
+        return anz.rateinfo(Okcallback,ErrorCallnack);
+    }
+    throw "callback is not function";
+};
+
+exports.mhjb = function (Okcallback, ErrorCallnack) {
+
+    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
+        return mhjb.rateinfo(Okcallback,ErrorCallnack);
+    }
+    throw "callback is not function";
+};

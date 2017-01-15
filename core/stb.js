@@ -14,15 +14,21 @@ function stb() {
 
      var storeratearray=[];
      var lablearray=['Currency','Buy','Sale'];
+     var labelrateinfo = ['Date','rate'];
+     var rateinfo ={};
 
      httpclient.call(conf.serverurl.stb,function ok(stringhtml) {
 
+         //get date
+         var startdateproint=stringhtml.indexOf('Date (')+'Date ('.length;
+         var enddateproint=stringhtml.indexOf(')',startdateproint);
+         var date=stringhtml.substring(startdateproint,enddateproint);
+
+         //get rate information
          var startproint=stringhtml.indexOf('<td bgcolor="#ffffff">');
          var endproint=stringhtml.lastIndexOf('<!--end-laonews-feed//-->');
          var newstringhtml=stringhtml.substring(startproint+5,endproint);
          var htmlarray=newstringhtml.split('</tr>');
-
-         // var ratecontainerarray = htmlarray[3].split('</td>');
 
         for (var i=2;i<htmlarray.length-3;i++) {
 
@@ -46,8 +52,9 @@ function stb() {
 
         }
 
-
-         okcallback(storeratearray);
+         rateinfo[labelrateinfo[0]] = date;
+         rateinfo[labelrateinfo[1]] = storeratearray;
+         okcallback(rateinfo);
          
      },function error(err) {
          errorcallback(err);

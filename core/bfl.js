@@ -17,8 +17,15 @@ function bfl() {
 
         var storeratearray=[];
         var lablearray=['Currency','Buy','Sale'];
+        var labelrateinfo = ['Date','rate'];
+        var rateinfo ={};
 
         httpclient.call(conf.serverurl.bfl,function ok(stringhtml) {
+
+
+            var startdatetproint=stringhtml.indexOf('Exchange rates* (')+'Exchange rates* ('.length;
+            var enddateproint=stringhtml.indexOf(')</h2>',startdatetproint);
+            var date=stringhtml.substring(startdatetproint,enddateproint).trim();
 
             var startproint=stringhtml.indexOf("<div class='Row'>");
             var endproint=stringhtml.indexOf("<div class='clear'></div>");
@@ -41,7 +48,9 @@ function bfl() {
 
             }
 
-            okcallback(storeratearray);            
+            rateinfo[labelrateinfo[0]] = date;
+            rateinfo[labelrateinfo[1]] = storeratearray;
+            okcallback(rateinfo);
             
         },function error(err) {
             errorcallback(err);
@@ -50,7 +59,6 @@ function bfl() {
     }
 
 }
-
 
 module.exports=function () {
     return new bfl();

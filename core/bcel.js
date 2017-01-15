@@ -11,30 +11,61 @@ function bcel() {
     this.rateinfo=function (okcallback, errorcallback) {
 
         var storeratearray=[];
-        var lablearray=['Currency','Buy','Sale'];
+        var lablearray=['Currency','CurrencyCode','Buy','Sale','Note','Bill','Efi'];
+        var lablerateinfo =['date','rate'];
+        var rateinfo={};
 
         httpclient.call(conf.serverurl.bcel,function ok(stringhtml) {
 
+            //get date
+            var startdatepoint = stringhtml.indexOf('ປະຈໍາວັນທີ:') + 'ປະຈໍາວັນທີ:'.length;
+            var enddatepoint = stringhtml.lastIndexOf('</strong></label>');
+            var date = stringhtml.substring(startdatepoint,enddatepoint).trim();
+             rateinfo[lablerateinfo[0]] = date;
+
+            //get rate information
             var startproint=stringhtml.indexOf("<tbody>");
             var endproint=stringhtml.indexOf("</table>");
             var newstringhtml=stringhtml.substring(startproint+"<tbody>".length,endproint);
-            var spile=newstringhtml.split("</tr><tr>");
+            var spile=newstringhtml.split("</tr>");
 
-            for (var i=0;i<spile.length;i++){
-                var newspile=spile[i].split("</td>");
+            for (var i=0;i<spile.length -1 ;i++){
                 var storerate={};
-                var curency=newspile[0].substring(newspile[0].indexOf("/>")+"/>".length,newspile[0].length);
-                var buy=newspile[1].substring(newspile[1].indexOf("'>")+"'>".length,newspile[1].length);
-                var sale=newspile[2].substring(newspile[2].indexOf("'>")+"'>".length,newspile[2].length);
+                var buysubrate ={};
 
-                storerate[lablearray[0]]=curency.trim();
-                storerate[lablearray[1]]=buy.trim();
-                storerate[lablearray[2]]=sale.trim();
+                var newspile=spile[i].split("</td>");
 
+                for(var k =0 ;k < newspile.length ; k++){
+
+                    var rateval=newspile[k].substring(newspile[k].indexOf('">')+'">'.length,newspile[k].length).trim();
+
+                    if (k==0){
+                        storerate[lablearray[0]]=rateval;
+                    }else if (k==2){
+                        storerate[lablearray[1]]=rateval;
+                    }
+                    else if (k ==3 || k==4 ||k==5 || k==6){
+                        rateval=newspile[k].substring(newspile[k].indexOf('>')+'>'.length,newspile[k].length).trim();
+                        if (k==3) {
+                            buysubrate[lablearray[4]] = rateval;
+                        }else if (k==4){
+                            buysubrate[lablearray[5]]=rateval;
+                        }else if (k==5){
+                            buysubrate[lablearray[6]]=rateval;
+                        }else if (k==6){
+                            storerate[lablearray[3]]=rateval;
+                        }
+                    }
+
+                }
+
+                storerate[lablearray[2]]=buysubrate;
                 storeratearray.push(storerate);
             }
 
-            okcallback(storeratearray);
+            rateinfo[lablerateinfo[1]] =storeratearray;
+
+            okcallback(rateinfo);
 
         },function error(err) {
             errorcallback(err);
@@ -43,6 +74,7 @@ function bcel() {
     }
 
 }//class cur string
+
 
 module.exports=function () {
     return new bcel();

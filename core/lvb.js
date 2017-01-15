@@ -7,12 +7,15 @@
 var conf=require('../conf')();
 var httpclient =require('./httpclient')();
 
+const lvbdateurl = 'http://laovietbank.com.la/la/exchange/exchange-rate.html';
 
 function lvb() {
 
     this.rateinfo=function (okcallback, errorcallback) {
         var storeratearray=[];
         var lablearray=['Currency','Buy','Sale'];
+        var labelrateinfo = ['Date','rate'];
+        var rateinfo ={};
 
         httpclient.call(conf.serverurl.lvb,function ok(stringhtml) {
 
@@ -42,16 +45,31 @@ function lvb() {
 
             }
 
-            okcallback(storeratearray);
+
+            //get date
+
+            httpclient.call(lvbdateurl,function (html) {
+
+                var startdateproint=html.indexOf('value="')+'value="'.length;
+                var enddateproint=html.indexOf('"/>',startdateproint);
+                var date =html.substring(startdateproint,enddateproint).trim();
+
+                rateinfo[labelrateinfo[0]] = date;
+                rateinfo[labelrateinfo[1]] = storeratearray;
+                okcallback(rateinfo);
+
+            },function (err) {
+              return  errorcallback(err);
+            });
+
 
         },function error(err) {
-            errorcallback(err);
+           return errorcallback(err);
         });
 
     }
 
 }
-
 
 module.exports=function () {
     return new lvb();

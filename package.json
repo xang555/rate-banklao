@@ -5,7 +5,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "debug": "~2.2.0",
     "request": "^2.79.0"
   },
   "description": "module for retrieve money rate some big bank in laos",

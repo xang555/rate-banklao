@@ -12,9 +12,18 @@ function bol() {
 
         var storeratearray=[];
         var lablearray=['Currency','Buy','Sale'];
+        var labelrateinfo = ['Date','rate'];
+        var rateinfo ={};
 
         httpclient.call(conf.serverurl.bol,function ok(stringhtml) {
 
+           //get date
+            var startdateproint=stringhtml.indexOf("Exchange Rates on")+'Exchange Rates on'.length;
+            var enddateproint=stringhtml.indexOf("</span></span>");
+            var date=stringhtml.substring(startdateproint,enddateproint).trim();
+
+
+           // get rate information
             var startproint=stringhtml.indexOf("<tr bgcolor=\"#D2EDFF\">");
             var endproint=stringhtml.lastIndexOf("</table>",stringhtml.length-1);
             var newstringhtml=stringhtml.substring(startproint,endproint);
@@ -41,8 +50,10 @@ function bol() {
                 storeratearray.push(valrateinfo);
             }
 
+            rateinfo[labelrateinfo[0]] = date;
+            rateinfo[labelrateinfo[1]] = storeratearray;
 
-            okcallback(storeratearray);
+            okcallback(rateinfo);
 
         },function error(err) {
             errorcallback(err);
@@ -50,8 +61,15 @@ function bol() {
 
     }//rateinfo
 
-
 }
+
+
+new bol().rateinfo(function (rate) {
+    console.log(rate);
+},function (err) {
+    console.log(err);
+});
+
 
 module.exports=function () {
     return new bol();

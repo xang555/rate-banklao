@@ -12,8 +12,16 @@ function psb() {
     this.rateinfo=function (okcallback, errorcallback) {
         var storeratearray=[];
         var lablearray=['Currency','Buy','Sale'];
-        httpclient.call(conf.serverurl.psb,function ok(stringhtml) {
+        var labelrateinfo = ['Date','rate'];
+        var rateinfo ={};
 
+
+        httpclient.call(conf.serverurl.psb,function ok(stringhtml) {
+            //get date
+            var startdateproint=stringhtml.indexOf("ວັນທີ")+"ວັນທີ".length;
+            var enddateproint=stringhtml.indexOf('</td>',startdateproint);
+            var date=stringhtml.substring(startdateproint,enddateproint).trim();
+            //get rate information
             var startproint=stringhtml.indexOf("height=\"28\" >");
             var endproint=stringhtml.lastIndexOf("</table> ",(stringhtml.length-1)-startproint);
             var newstringhtml=stringhtml.substring(startproint+("height=\"28\" >".length),endproint);
@@ -31,7 +39,9 @@ function psb() {
 
                 storeratearray.push(storerate);
             }
-            okcallback(storeratearray);
+            rateinfo[labelrateinfo[0]] = date;
+            rateinfo[labelrateinfo[1]] = storeratearray;
+            okcallback(rateinfo);
         },function error(err) {
             errorcallback(err);
         });
@@ -39,7 +49,6 @@ function psb() {
     } //rateinfo
     
 }
-
 
 module.exports=function () {
     return new psb();
