@@ -14,7 +14,7 @@ var psb =require('./core/psb')();
 var stb =require('./core/stb')();
 var jdb =require('./core/jdb')();
 var kskb =require('./core/kskb')();
-var anz =require('/core/anz')();
+var anz =require('./core/anz')();
 var mhjb =require('./core/mhjb')();
 
 
