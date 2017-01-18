@@ -29,11 +29,12 @@ retrieve rate money bcel bank
 
 ```
 var rate =require('rate-banklao');
-const util = require('util');
+var util =require('util');
 
-rate.bcel(function (rate) {
+rate.bcel()
+.then(function (rate) {
     console.log(util.inspect(rate, false, null));
-},function (err) {
+}).catch(function (err) {
     console.log(err);
 });
 
@@ -68,6 +69,10 @@ result from runing above code
        .
        
   ```
+  
+ **you have to use promise style coding** 
+  
+  
 # Method
 
 when you install and require module like this :
@@ -78,20 +83,21 @@ var rate =require('rate-banklao');
 ```
 you will have instane's module. so you can use any method below.
   
-### bcel(success,error)
+### bcel()  -> promise
 
- return json object which it is money rate from bcel bank
+ return promise object which it is money rate from bcel bank
     
     example :
     
     
 ```
 var rate =require('rate-banklao');
-const util = require('util');
+var util =require('util');
 
-rate.bcel(function (rate) {
+rate.bcel()
+.then(function (rate) {
     console.log(util.inspect(rate, false, null));
-},function (err) {
+}).catch(function (err) {
     console.log(err);
 });
 
@@ -129,9 +135,9 @@ method return json object like this :
 ```
     
 
-### ldb(success,error)
+### ldb() -> promise
 
- return json object which it is money rate from Lao Development Bank (LDB)
+ return  promise object which it is money rate from Lao Development Bank (LDB)
 
 example result :
 
@@ -150,9 +156,9 @@ example result :
 
 ```
 
-### bol(success,error) 
+### bol()  -> promise 
 
- return json object which it is money rate from GOVERNOR OF BANK THE LAO PDR (BOL)
+ return  promise object which it is money rate from GOVERNOR OF BANK THE LAO PDR (BOL)
 
 example result :
 
@@ -184,9 +190,9 @@ example result :
 
 ```
 
-### stb(success,error) 
+### stb()  -> promise
 
- return json object which it is money rate from ST bank (STB)
+ return  promise object which it is money rate from ST bank (STB)
 
 example result :
 
@@ -202,9 +208,9 @@ example result :
 
 ```
 
-### lvb(success,error)
+### lvb() -> promise
 
- return json object which it is money rate from LaoVietBank (LVB)
+ return  promise object which it is money rate from LaoVietBank (LVB)
 
 example result :
 
@@ -225,9 +231,9 @@ example result :
 
 ```
 
-### bfl(success,error)
+### bfl() -> promise
 
- return json object which it is money rate from Banque Franco-Lao (BFL)
+ return  promise object which it is money rate from Banque Franco-Lao (BFL)
 
 example result :
 
@@ -240,9 +246,9 @@ example result :
 
 ```
 
-### psb(success,erro) 
+### psb() -> promise 
 
-return json object which it is money rate from Phongsavanh bank (PSB)
+return  promise object which it is money rate from Phongsavanh bank (PSB)
 
 example result :
 
@@ -266,8 +272,8 @@ example result :
 
 ```
 
-### acleda(success,error) 
-return json object which it is money rate from ACLEDA Bank Lao (ACLEDA)
+### acleda() -> promise 
+return  promise object which it is money rate from ACLEDA Bank Lao (ACLEDA)
 
 example result :
 
@@ -286,9 +292,9 @@ example result :
 
 ```
 
-### jdb(success,error) 
+### jdb() -> promise 
 
-return json object which it is money rate from Joint Development Bank (JDB)
+return  promise object which it is money rate from Joint Development Bank (JDB)
 
 example result :
 
@@ -346,8 +352,8 @@ example result :
 
 ```
 
-### kskb(success,error) 
-return json object which it is money rate from Kasikornthai bank (KSKB)
+### kskb() -> promise 
+return  promise object which it is money rate from Kasikornthai bank (KSKB)
 
 example result :
 
@@ -368,9 +374,9 @@ example result :
        Sale: { Note: '235.10', TT: '235.10' } } ] }
 ```
 
-### anz(success,error) 
+### anz() -> promise 
 
-return json object which it is money rate from Anz bank (ANZ)
+return  promise object which it is money rate from Anz bank (ANZ)
 
 example result :
 
@@ -536,8 +542,8 @@ example result :
 ```
 
 
-### mhjb(success,error) 
-   return json object which it is money rate from Maruhanjapan bank lao (MHJB)
+### mhjb() -> promise 
+   return  promise object which it is money rate from Maruhanjapan bank lao (MHJB)
 
 example result :
 
@@ -552,9 +558,5 @@ example result :
 ```
 
 
-####**note**
-  - **success** is a function when success retrieve rate from bank and pass rate parameter instead `Rate`  **#success(rate){...}**
-  - **errorr** is a function when error retrieve rate and return error pass to parameter `err` **#error(err){...}**
-  
   
   
