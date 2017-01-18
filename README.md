@@ -31,7 +31,7 @@ retrieve rate money bcel bank
 var rate =require('rate-banklao');
 const util = require('util');
 
-rate.mhjb(function (rate) {
+rate.bcel(function (rate) {
     console.log(util.inspect(rate, false, null));
 },function (err) {
     console.log(err);
@@ -89,7 +89,7 @@ you will have instane's module. so you can use any method below.
 var rate =require('rate-banklao');
 const util = require('util');
 
-rate.mhjb(function (rate) {
+rate.bcel(function (rate) {
     console.log(util.inspect(rate, false, null));
 },function (err) {
     console.log(err);
