@@ -83,7 +83,7 @@ var rate =require('rate-banklao');
 ```
 you will have instane's module. so you can use any method below.
   
-### bcel(success,error)
+### bcel()  -> promise
 
  return promise object which it is money rate from bcel bank
     
@@ -135,7 +135,7 @@ method return json object like this :
 ```
     
 
-### ldb(success,error)
+### ldb() -> promise
 
  return  promise object which it is money rate from Lao Development Bank (LDB)
 
@@ -156,7 +156,7 @@ example result :
 
 ```
 
-### bol(success,error) 
+### bol()  -> promise 
 
  return  promise object which it is money rate from GOVERNOR OF BANK THE LAO PDR (BOL)
 
@@ -190,7 +190,7 @@ example result :
 
 ```
 
-### stb(success,error) 
+### stb()  -> promise
 
  return  promise object which it is money rate from ST bank (STB)
 
@@ -208,7 +208,7 @@ example result :
 
 ```
 
-### lvb(success,error)
+### lvb() -> promise
 
  return  promise object which it is money rate from LaoVietBank (LVB)
 
@@ -231,7 +231,7 @@ example result :
 
 ```
 
-### bfl(success,error)
+### bfl() -> promise
 
  return  promise object which it is money rate from Banque Franco-Lao (BFL)
 
@@ -246,7 +246,7 @@ example result :
 
 ```
 
-### psb(success,erro) 
+### psb() -> promise 
 
 return  promise object which it is money rate from Phongsavanh bank (PSB)
 
@@ -272,7 +272,7 @@ example result :
 
 ```
 
-### acleda(success,error) 
+### acleda() -> promise 
 return  promise object which it is money rate from ACLEDA Bank Lao (ACLEDA)
 
 example result :
@@ -292,7 +292,7 @@ example result :
 
 ```
 
-### jdb(success,error) 
+### jdb() -> promise 
 
 return  promise object which it is money rate from Joint Development Bank (JDB)
 
@@ -352,7 +352,7 @@ example result :
 
 ```
 
-### kskb(success,error) 
+### kskb() -> promise 
 return  promise object which it is money rate from Kasikornthai bank (KSKB)
 
 example result :
@@ -374,7 +374,7 @@ example result :
        Sale: { Note: '235.10', TT: '235.10' } } ] }
 ```
 
-### anz(success,error) 
+### anz() -> promise 
 
 return  promise object which it is money rate from Anz bank (ANZ)
 
@@ -542,7 +542,7 @@ example result :
 ```
 
 
-### mhjb(success,error) 
+### mhjb() -> promise 
    return  promise object which it is money rate from Maruhanjapan bank lao (MHJB)
 
 example result :
@@ -558,9 +558,5 @@ example result :
 ```
 
 
-####**note**
-  - **success** is a function when success retrieve rate from bank and pass rate parameter instead `Rate`  **#success(rate){...}**
-  - **errorr** is a function when error retrieve rate and return error pass to parameter `err` **#error(err){...}**
-  
   
   
