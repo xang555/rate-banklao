@@ -5,6 +5,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
     "request": "^2.79.0"
   },
   "description": "module for retrieve money rate some big bank in laos",

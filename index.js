@@ -17,98 +17,15 @@ var kskb =require('./core/kskb')();
 var anz =require('./core/anz')();
 var mhjb =require('./core/mhjb')();
 
-
-exports.bcel = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return bcel.rateinfo(Okcallback,ErrorCallnack);
-    }
-
-    throw "callback is not function";
-
-}
-
-exports.ldb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return ldb.rateinfo(Okcallback,ErrorCallnack);
-    }
-
-    throw "callback is not function";
-
-};
-exports.acleda = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return acleda.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-exports.bfl = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function') {
-        return bfl.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-exports.bol = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return bol.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-exports.lvb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return lvb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-exports.psb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return psb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-exports.stb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return stb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-
-exports.jdb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return jdb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-
-
-exports.kskb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return kskb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-
-exports.anz = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return anz.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
-
-exports.mhjb = function (Okcallback, ErrorCallnack) {
-
-    if (typeof Okcallback === 'function' && typeof ErrorCallnack === 'function'){
-        return mhjb.rateinfo(Okcallback,ErrorCallnack);
-    }
-    throw "callback is not function";
-};
+exports.bcel = function () {return bcel.rateinfo();}
+exports.ldb = function(){return ldb.rateinfo()};
+exports.acleda = function(){return acleda.rateinfo()};
+exports.bfl = function(){return bfl.rateinfo()};
+exports.bol = function(){return bol.rateinfo()};
+exports.lvb = function(){return lvb.rateinfo()};
+exports.psb = function (){return psb.rateinfo()};
+exports.stb = function (){return stb.rateinfo()};
+exports.jdb = function (){return jdb.rateinfo()};
+exports.kskb = function (){return kskb.rateinfo()};
+exports.anz = function (){return anz.rateinfo()};
+exports.mhjb = function (){return mhjb.rateinfo()};
