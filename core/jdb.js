@@ -86,12 +86,6 @@ function jdb() {
 
 }
 
-new jdb().rateinfo().then(function (rate) {
-    console.dir(rate);
-}).catch(function (err) {
-    console.dir(err);
-})
-
 module.exports =function () {
     return new jdb();
 }
