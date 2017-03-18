@@ -86,15 +86,6 @@ function scb() {
 
 }//class cur string
 
-const util = require('util');
-
-new scb().rateinfo().then(function (rate) {
-    console.log(util.inspect(rate,false,null));
-}).catch(function (err) {
-    console.log(err);
-})
-
-
 module.exports = function () {
     return new scb();
 }
