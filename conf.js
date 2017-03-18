@@ -12,7 +12,7 @@ function conf() {
         stb:"http://stbanklaos.la/index_la.php",
         psb:"http://www.phongsavanhbank.com/psv/index.php",
         acleda:"http://www.acledabank.com.la/la/eng/",
-        bfl:"http://www.banquefrancolao.com/index.aspx",
+        bfl:"https://www.banquefrancolao.com/",
         lvb:"http://laovietbank.com.la/la/",
         jdb:"http://www.jdbbank.com.la/index.php?r=site/exchange",
         kskb:'http://www.kasikornbank.com.la/LA/Rate/Pages/foreign_exchange_rate.aspx',
