@@ -16,6 +16,7 @@
 - **Kasikornthai bank (KSKB)** http://www.kasikornbank.com.la
 - **Anz bank (ANZ)**  http://www.anz.com
 - **Maruhanjapan bank lao (MHJB)** http://www.maruhanjapanbanklao.com
+- **Sacombank (scb)** https://www.sacombank.com.la/la/Pages/default.aspx
 
 # install
 
@@ -557,6 +558,28 @@ example result :
      { Currency: 'AUD', Buy: '5,922', Sale: 'N/A' } ] }
 ```
 
-
+### scb() -> promise
+     return  promise object which it is money rate from Sacombank (scb)
+example result :
+```
+{ Date: '9:40, 17/03/2017',
+  rate: 
+   { Transfer: 
+      [ { Currency: 'VND', Buy: '0.3703', Sale: '0.3777' },
+        { Currency: 'USD', Buy: '8,198', Sale: '8,221' },
+        { Currency: 'THB', Buy: '238.50', Sale: '240.30' },
+        { Currency: 'EUR', Buy: '8,663', Sale: '8,707' },
+        { Currency: 'GBP', Buy: '9,813', Sale: '10,009' },
+        { Currency: 'JPY', Buy: '69.80', Sale: '71.19' },
+        { Currency: 'CNY', Buy: '1,208', Sale: '1,226' } ],
+     Cash: 
+      [ { Currency: 'VND', Buy: 'N/A', Sale: 'N/A' },
+        { Currency: 'USD', Buy: '8,198', Sale: 'N/A' },
+        { Currency: 'THB', Buy: '238.50', Sale: 'N/A' },
+        { Currency: 'EUR', Buy: '8.663', Sale: 'N/A' },
+        { Currency: 'GBP', Buy: '9,813', Sale: 'N/A' },
+        { Currency: 'JPY', Buy: '69.80', Sale: 'N/A' },
+        { Currency: 'CNY', Buy: 'N/A', Sale: 'N/A' } ] } }
+```
   
   
