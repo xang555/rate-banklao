@@ -559,8 +559,11 @@ example result :
 ```
 
 ### scb() -> promise
-     return  promise object which it is money rate from Sacombank (scb)
+
+  return  promise object which it is money rate from Sacombank (scb)
+     
 example result :
+
 ```
 { Date: '9:40, 17/03/2017',
   rate: 
