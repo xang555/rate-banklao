@@ -9,7 +9,7 @@ var httpclient =require('./httpclient')();
 var promise =require('bluebird');
 
 
-const lvbdateurl = 'http://laovietbank.com.la/la/exchange/exchange-rate.html';
+var lvbdateurl = 'http://laovietbank.com.la/la/exchange/exchange-rate.html';
 
 function lvb() {
 
