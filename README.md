@@ -17,6 +17,7 @@
 - **Anz bank (ANZ)**  http://www.anz.com
 - **Maruhanjapan bank lao (MHJB)** http://www.maruhanjapanbanklao.com
 - **Sacombank (scb)** https://www.sacombank.com.la/la/Pages/default.aspx
+- **Agricultural Promotion Bank (apb)** http://apb.com.la/index_en.php
 
 # install
 
@@ -584,5 +585,19 @@ example result :
         { Currency: 'JPY', Buy: '69.80', Sale: 'N/A' },
         { Currency: 'CNY', Buy: 'N/A', Sale: 'N/A' } ] } }
 ```
-  
-  
+
+### apb() -> promise
+
+  return  promise object which it is money rate from Agricultural Promotion Bank (apb)
+     
+example result :
+
+```
+{ Date: '17/03/2017',
+  rate: 
+   [ { Currency: 'USD', Buy: '8.193', Sale: '8.220' },
+     { Currency: 'THB', Buy: '238,39', Sale: '239,79' },
+     { Currency: 'CNY', Buy: '1.166', Sale: '1.190' },
+     { Currency: 'EUR', Buy: '8.771', Sale: '8.814' },
+     { Currency: 'VND', Buy: '0,3520', Sale: '0,3585' } ] }
+```
