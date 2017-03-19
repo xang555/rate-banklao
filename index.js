@@ -17,6 +17,7 @@ var kskb =require('./core/kskb')();
 var anz =require('./core/anz')();
 var mhjb =require('./core/mhjb')();
 var scb = require('./core/scb')();
+var apb = require('./core/apb')();
 
 exports.bcel = function () {return bcel.rateinfo();}
 exports.ldb = function(){return ldb.rateinfo()};
@@ -31,3 +32,4 @@ exports.kskb = function (){return kskb.rateinfo()};
 exports.anz = function (){return anz.rateinfo()};
 exports.mhjb = function (){return mhjb.rateinfo()};
 exports.scb = function () {return scb.rateinfo()};
+exports.apb = function () {return apb.rateinfo()};
