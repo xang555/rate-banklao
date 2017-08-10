@@ -21,11 +21,11 @@ function acleda() {
          httpclient.call(conf.serverurl.acleda)
              .then(function (stringhtml) {
 
-                 var stardatetproint=stringhtml.indexOf('span style="font-size:85%;">')+'span style="font-size:85%;">'.length;
-                 var enddateproint=stringhtml.indexOf('</span>',stardatetproint);
+                 var stardatetproint=stringhtml.indexOf('Kip</strong><br />')+'Kip</strong><br />'.length;
+                 var enddateproint=stringhtml.indexOf('<table cellspacing="1"',stardatetproint);
                  var date=stringhtml.substring(stardatetproint,enddateproint).replace('&nbsp;','').trim();
 
-                 var startproint=stringhtml.indexOf("<tr><td");
+                 var startproint=stringhtml.indexOf("<tr><td style='text-align:center; padding:1px 7px; background:#eee;'>");
                  var endproint=stringhtml.indexOf("</table>");
                  var newstringhtml=stringhtml.substring(startproint,endproint);
                  var spile=newstringhtml.split("</tr><tr>");
