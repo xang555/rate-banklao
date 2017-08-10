@@ -40,6 +40,11 @@ function stb() {
                         var curency =ratecontainerarray[0].substring(ratecontainerarray[0].length-4,ratecontainerarray[0].length).trim();
                         if (i == 2 ){
                             buy =ratecontainerarray[1].substring(ratecontainerarray[1].indexOf('<p>')+'<p>'.length,ratecontainerarray[1].lastIndexOf('</p>')).trim();
+                        } else if (i == 3){
+                            buy =ratecontainerarray[1].substring(ratecontainerarray[1].indexOf('\r\n\t\t\t\t\t\t\t\t\t'),ratecontainerarray[1].indexOf('</p>') ).trim();
+                        } else if (i == 4) {
+                            curency =ratecontainerarray[0].substring(ratecontainerarray[0].indexOf('<p>\r\n\t\t\t\t\t\t\t\t\t') + '<p>\r\n\t\t\t\t\t\t\t\t\t'.length,ratecontainerarray[0].lastIndexOf('</p>\r\n\t\t\t\t\t\t\t')).trim();
+                            buy =ratecontainerarray[1].substring(ratecontainerarray[1].indexOf('<span style="font-size: 12px;">')+'<span style="font-size: 12px;">'.length,ratecontainerarray[1].lastIndexOf('</span></p>')).trim();
                         }else {
                             buy =ratecontainerarray[1].substring(ratecontainerarray[1].indexOf('\r\n\t\t\t\t\t\t\t\t'),ratecontainerarray[1].length).trim();
                         }
