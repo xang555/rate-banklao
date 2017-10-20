@@ -13,7 +13,8 @@ function httpclient() {
 
         var  option = {};
         option. headers ={
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
         }
 
         return new promise(function (resolve, reject) {
@@ -23,6 +24,8 @@ function httpclient() {
                     reject(error);
                 }else  if (res.statusCode==200){
                     resolve(body.toString());
+                }else{
+                    reject(res.statusCode+" => " + body.toString());
                 }
 
             });

@@ -49,7 +49,7 @@ function bol() {
                         }else if (i===16){
                             valrateinfo[lablearray[0]]=newsubstringhtml[3].substring(newsubstringhtml[3].lastIndexOf("style42\"")+9,newsubstringhtml[3].length).trim();
                             valrateinfo[lablearray[1]]=newsubstringhtml[4].substring(newsubstringhtml[4].indexOf("style42\"")+9,newsubstringhtml[4].length).trim();
-                            valrateinfo[lablearray[2]]=newsubstringhtml[5].substring(newsubstringhtml[5].lastIndexOf("style42\"")+9,newsubstringhtml[5].length).trim();
+                            valrateinfo[lablearray[2]]=newsubstringhtml[5].substring(newsubstringhtml[5].lastIndexOf('style42"><strong>')+'style42"><strong>'.length,newsubstringhtml[5].length - '</strong>'.length).trim();
                         }
 
                         storeratearray.push(valrateinfo);

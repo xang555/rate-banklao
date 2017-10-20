@@ -26,7 +26,7 @@ function acleda() {
                  var date=stringhtml.substring(stardatetproint,enddateproint).replace('&nbsp;','').trim();
 
                  var startproint=stringhtml.indexOf("<tr><td style='text-align:center; padding:1px 7px; background:#eee;'>");
-                 var endproint=stringhtml.indexOf("</table>");
+                 var endproint=stringhtml.lastIndexOf("</tr>            </table>");
                  var newstringhtml=stringhtml.substring(startproint,endproint);
                  var spile=newstringhtml.split("</tr><tr>");
 
@@ -46,7 +46,7 @@ function acleda() {
                  }
                  rateinfo[labelrateinfo[0]] = date;
                  rateinfo[labelrateinfo[1]] = storeratearray;
-                 resolve(rateinfo);
+                  resolve(rateinfo);
 
              }).catch(function (err) {
                 reject(err);
