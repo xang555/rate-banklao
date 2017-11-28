@@ -35,17 +35,11 @@ function lvb() {
                         var newspile = spile[i].split("</td>");
                         var storerate = {};
 
-                        var curency = newspile[0].substring(newspile[0].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[0].lastIndexOf("&nbsp"));
+                       var curency = newspile[0].substring(newspile[0].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[0].length);
                         var buy = newspile[2].substring(newspile[2].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[2].length);
                         var sale = newspile[3].substring(newspile[3].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[3].length);
 
-                        if (i === 2 || i === 7) {
-                            curency = newspile[0].substring(newspile[0].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[0].length);
-                            buy = newspile[2].substring(newspile[2].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[2].length);
-                            sale = newspile[3].substring(newspile[3].indexOf("width=\"64\">") + "width=\"64\">".length, newspile[3].length);
-                        }
-
-                        storerate[lablearray[0]] = curency.trim();
+                        storerate[lablearray[0]] = curency.replace("&nbsp;","").trim();
                         storerate[lablearray[1]] = buy.trim();
                         storerate[lablearray[2]] = sale.trim();
                         storeratearray.push(storerate);
