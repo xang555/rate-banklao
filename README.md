@@ -1,6 +1,6 @@
 # rate-banklao
 
-## retrieve rate money from any bank in laos
+## Fetch money rate from any bank in laos
 
 ### support bank list 
 
