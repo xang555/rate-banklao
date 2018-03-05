@@ -1,7 +1,7 @@
 
 # rate-banklao
+[![npm version](https://badge.fury.io/js/rate-banklao.svg)](https://badge.fury.io/js/rate-banklao)
 [![Build Status](https://travis-ci.org/xang555/rate-banklao.svg?branch=master)](https://travis-ci.org/xang555/rate-banklao)
-
 ## Fetch money rate from any bank in laos
 
 ### support bank list 
