@@ -22,7 +22,7 @@ function conf() {
         lcnb:'http://www.laochinabank.com/index.php?r=site/rate',
         icbc:'http://vientiane.icbc.com.cn/ICBC/%E6%B5%B7%E5%A4%96%E5%88%86%E8%A1%8C/%E4%B8%87%E8%B1%A1%E7%BD%91%E7%AB%99/en/ProductsServices1/ExchangeRateofForeignCurrency/exchangerateofforeigncurrency.htm',
         byb:'http://www.booyoungbank.com/main.php',
-        apb:'http://apb.com.la/index_en.php'
+        apb:'https://apb.com.la/exchange-rate-detail.php'
     }
 
 }

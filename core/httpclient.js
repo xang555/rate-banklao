@@ -6,20 +6,21 @@
 
 var request=require('request');
 var promise =require('bluebird');
+var agents = require('browser-agents');
 
 function httpclient() {
 
-    this.call=function (url) {
+    var  option = {};
+    option.headers ={
+        'User-Agent': agents.random(),
+        'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
+    }
 
-        var  option = {};
-        option. headers ={
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'
-        }
+    this.call=function (url, opt = option) {
 
         return new promise(function (resolve, reject) {
 
-            request(url,option,function (error, res, body) {
+            request(url,opt,function (error, res, body) {
                 if (error){
                     reject(error);
                 }else  if (res.statusCode==200){

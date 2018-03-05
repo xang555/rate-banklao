@@ -2,10 +2,12 @@
   "name": "rate-banklao",
   "version": "3.2.3",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --timeout 60000"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
+    "browser-agents": "^1.0.1",
     "request": "^2.83.0"
   },
   "description": "module for retrieve money rate some big bank in laos",

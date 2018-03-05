@@ -17,7 +17,7 @@
 - **Anz bank (ANZ)**  http://www.anz.com
 - **Maruhanjapan bank lao (MHJB)** http://www.maruhanjapanbanklao.com
 - **Sacombank (scb)** https://www.sacombank.com.la/la/Pages/default.aspx
-- **Agricultural Promotion Bank (apb)** http://apb.com.la/index_en.php
+- **Agricultural Promotion Bank (apb)** https://apb.com.la/exchange-rate-detail.php
 
 # install
 
