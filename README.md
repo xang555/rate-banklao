@@ -1,3 +1,5 @@
+![rate-banklao status](https://travis-ci.org/xang555/rate-banklao.svg?branch=master)
+
 # rate-banklao
 
 ## Fetch money rate from any bank in laos
