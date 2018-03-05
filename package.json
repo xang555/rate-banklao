@@ -1,6 +1,6 @@
 {
   "name": "rate-banklao",
-  "version": "3.2.3",
+  "version": "3.3.0",
   "scripts": {
     "start": "node app.js",
     "test": "mocha --timeout 60000"
