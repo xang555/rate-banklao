@@ -3,9 +3,6 @@ node_js:
   - "9.2.0"
   - "9.7.1"
 sudo: false
-cache:
-  directories:
-    - node_modules
 before_install:
   #install mocha 
   - "npm install --global mocha"
