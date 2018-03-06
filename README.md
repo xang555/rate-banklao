@@ -31,7 +31,7 @@ $ npm install rate-banklao --save
 
 retrieve rate money bcel bank 
 
-```
+```js
 var rate =require('rate-banklao');
 var util =require('util');
 
@@ -81,7 +81,7 @@ result from runing above code
 
 when you install and require module like this :
 
-```
+```js
 var rate =require('rate-banklao');
 
 ```
@@ -94,7 +94,7 @@ you will have instane's module. so you can use any method below.
     example :
     
     
-```
+```js
 var rate =require('rate-banklao');
 var util =require('util');
 
