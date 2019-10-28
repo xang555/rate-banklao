@@ -2,7 +2,7 @@
 # rate-banklao
 [![npm version](https://badge.fury.io/js/rate-banklao.svg)](https://badge.fury.io/js/rate-banklao)
 [![Build Status](https://travis-ci.org/xang555/rate-banklao.svg?branch=master)](https://travis-ci.org/xang555/rate-banklao)
-## Fetch money rate from any bank in laos
+## Rate-Banklao is a JS libraly for automaticly fetch currencies exchange rate from most well know bank in Laos.
 
 ### support bank list 
 
